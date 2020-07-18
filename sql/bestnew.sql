@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2020 at 01:48 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.2.31
+-- Generation Time: Jul 18, 2020 at 06:06 PM
+-- Server version: 5.6.48-log
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `best`
+-- Database: `bestnew`
 --
 
 -- --------------------------------------------------------
@@ -54,22 +54,40 @@ INSERT INTO `committee_members` (`unique_id`, `firstname`, `lastname`, `password
 --
 
 CREATE TABLE `staff_details` (
-  `id` int(11) NOT NULL,
-  `first_name` text NOT NULL,
-  `last_name` text NOT NULL,
-  `password` varchar(20) NOT NULL
+  `sr_no` int(11) NOT NULL,
+  `regis_no` varchar(25) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `sex` varchar(10) DEFAULT NULL,
+  `cheque_no` varchar(25) DEFAULT NULL,
+  `mobile_no` bigint(12) DEFAULT NULL,
+  `designation` varchar(30) DEFAULT NULL,
+  `department` varchar(30) DEFAULT NULL,
+  `depot` varchar(100) DEFAULT NULL,
+  `addictions` varchar(100) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
+  `comorbidity` varchar(100) DEFAULT NULL,
+  `last_working` varchar(20) DEFAULT NULL,
+  `travel_history` varchar(50) DEFAULT NULL,
+  `exposure` varchar(100) DEFAULT NULL,
+  `symptoms` varchar(100) DEFAULT NULL,
+  `testing_date` varchar(20) DEFAULT NULL,
+  `hospital` varchar(50) DEFAULT NULL,
+  `admission_date` varchar(20) DEFAULT NULL,
+  `oxygen` varchar(10) DEFAULT NULL,
+  `discharge` varchar(10) DEFAULT NULL,
+  `dis_date` varchar(10) DEFAULT NULL,
+  `dis_no` varchar(20) DEFAULT NULL,
+  `family` varchar(100) DEFAULT NULL,
+  `followup` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `staff_details`
 --
 
-INSERT INTO `staff_details` (`id`, `first_name`, `last_name`, `password`) VALUES
-(1, 'shailey', 'kadam', '8745'),
-(2, 'sakshi', 'kadam', '7654'),
-(3, 'pk', 'kadam', '879'),
-(4, 'sakshi', 'jh&85', 'kjbk67'),
-(5, 'sakshi', 'jh&85', 'mv876');
+INSERT INTO `staff_details` (`sr_no`, `regis_no`, `name`, `age`, `sex`, `cheque_no`, `mobile_no`, `designation`, `department`, `depot`, `addictions`, `address`, `comorbidity`, `last_working`, `travel_history`, `exposure`, `symptoms`, `testing_date`, `hospital`, `admission_date`, `oxygen`, `discharge`, `dis_date`, `dis_no`, `family`, `followup`) VALUES
+(1, 's123', 'sakshi', 22, 'Female', '1234567890', 9800987890, 'gfjhv', 'hvjh', 'hvjb', 'jhgihlskd ;dmsm ', 'vcgjdgwekjn jbciukwh.,ksfj', 'fdgteyeh', '2020-1-1', 'djbcmnd nm', 'uihiudbck ,cmnckuwhicwlekn', 'jhwiudhvkendve,m e,nk', '2020-1-1', 'Choose...', '2002-3-1', 'No', 'Discharge', '2020-4-1', 'hb543154', 'jkdklscnsdmn kjheiu', 'udkjdn ,ms');
 
 --
 -- Indexes for dumped tables
@@ -85,7 +103,8 @@ ALTER TABLE `committee_members`
 -- Indexes for table `staff_details`
 --
 ALTER TABLE `staff_details`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`sr_no`),
+  ADD UNIQUE KEY `regis_no` (`regis_no`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -95,7 +114,7 @@ ALTER TABLE `staff_details`
 -- AUTO_INCREMENT for table `staff_details`
 --
 ALTER TABLE `staff_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
